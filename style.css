@@ -1,0 +1,130 @@
+:root {
+  --clr-primary-orange:  hsl(31, 77%, 52%);
+  --clr-primary-cyan: hsl(184, 100%, 22%);
+  --clr-primary-darkc: hsl(179, 100%, 13%);
+
+  --clr-transparent: hsla(0, 0%, 100%, 0.75);
+  --clr-gray: hsl(0, 0%, 95%);
+
+  --fs: 0.9375rem;
+
+  --ff-lexend: "Lexend Deca", sans-serif;
+  --ff-shoulders:"Big Shoulders Display", sans-serif; ;
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.container { 
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  box-shadow: 0 1rem 1.5rem -0.5rem rgba(0, 0, 0, 0.5); 
+}
+
+.sedans {
+  background-color: var(--clr-primary-orange);
+}
+
+.suvs {
+  background-color: var(--clr-primary-cyan);
+}
+
+.luxury {
+  background-color: var(--clr-primary-darkc);
+}
+
+.grid-item {
+  padding-inline: 45px;
+  padding-block: 60px;
+  width: 300px;
+}
+
+
+.grid-item h2 {
+  color: white;
+  text-transform: uppercase;
+  font-family: var(--ff-shoulders);
+  font-size: 2rem;
+}
+
+.grid-item p {
+  font-size: 15px;
+  font-family: var(--ff-lexend);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--clr-transparent);
+  line-height: 25px;
+}
+
+.sedans {
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.luxury {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+button {
+  font-size: 15px;
+  margin-top: 40px;
+  font-family: var(--ff-lexend);
+  padding-block: 15px;
+  padding-inline: 40px;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  box-shadow: 0 1rem 1.5rem -0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.sedans button {
+ color: var(--clr-primary-orange);
+}
+.suvs button {
+ color: var(--clr-primary-cyan);
+}
+.luxury button {
+ color: var(--clr-primary-darkc);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--clr-transparent);
+  border: 2px solid var(--clr-transparent);
+  transition: ease-in-out 0.5s;
+}
+
+@media (max-width: 375px) {
+  .container {
+    margin: 80px;
+  }
+
+  .grid {
+    height: auto;
+    display: block;
+  }
+
+  .sedans,
+  .luxury {
+    border-radius: 5px; /* Set border radius for all corners */
+  }
+
+  .sedans {
+    border-radius: 5px 5px 0 0; /* Adjust border radius for sedans */
+  }
+
+  .luxury {
+    border-radius: 0 0 5px 5px; /* Adjust border radius for luxury */
+  }
+}
